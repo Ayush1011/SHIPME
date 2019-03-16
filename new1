@@ -1,0 +1,47 @@
+export default class blink  extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+      showtext:'true'
+      }
+
+  
+  setInterval( () => (
+    this.setState(previous=>(
+     { showtext:!previous.showtext
+}
+    ))
+    
+  ),1000);
+
+   
+
+}
+
+
+  render() { 
+   
+      if(!this.state.showtext)
+     {
+       return null;
+
+     }
+     return (
+       <View>
+         <View
+           style={{ backgroundColor: "orange",width:'auto',height:90 }}
+         />
+         <View
+           style={{ backgroundColor: "orange", height: 70, width: 70,marginLeft:140,borderRadius:100 }}
+         />
+         <View
+           style={{ backgroundColor: "orange", height: 90,  }}
+         />
+       </View>
+     );
+
+
+      
+  }
+}
